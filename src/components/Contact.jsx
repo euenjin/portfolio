@@ -1,38 +1,65 @@
+import { profile } from '../data/content'
+import { GithubIcon, LinkedinIcon, MailIcon, PhoneIcon } from './Icons'
+
 export default function Contact() {
+  const contacts = [
+    {
+      label: 'Email',
+      value: profile.email,
+      href: `mailto:${profile.email}`,
+      icon: <MailIcon />,
+      tone: 'mint',
+    },
+    {
+      label: 'Phone',
+      value: profile.phone,
+      href: `tel:${profile.phone.replace(/[^+\d]/g, '')}`,
+      icon: <PhoneIcon />,
+      tone: 'gold',
+    },
+    {
+      label: 'LinkedIn',
+      value: 'Eunjin Ahn',
+      href: profile.linkedin,
+      icon: <LinkedinIcon />,
+      tone: 'blue',
+    },
+    {
+      label: 'GitHub',
+      value: 'euenjin',
+      href: profile.github,
+      icon: <GithubIcon />,
+      tone: 'plum',
+    },
+  ]
+
   return (
     <section id="contact">
-      <h2>Get In Touch</h2>
-      <p>I'd love to collaborate on clinical data science projects or discuss opportunities in healthcare analytics.</p>
-      
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow">Let&apos;s Build Useful Models</p>
+          <h2>Contact</h2>
+        </div>
+        <span className="section-icon mint"><MailIcon /></span>
+      </div>
+      <p className="contact-intro">
+        I am open to health analytics, clinical data science, and applied machine learning opportunities.
+      </p>
+
       <div className="contact-links">
-        <div className="contact-link">
-          <div>
-            <strong>Email</strong>
-            <a href="mailto:ea3222@nyu.edu">ea3222@nyu.edu</a>
-          </div>
-        </div>
-        <div className="contact-link">
-          <div>
-            <strong>Phone</strong>
-            <a href="tel:+12068874095">+1 (206) 887-4095</a>
-          </div>
-        </div>
-        <div className="contact-link">
-          <div>
-            <strong>LinkedIn</strong>
-            <a href="https://www.linkedin.com/in/eunjin-eugene-ahn/" target="_blank" rel="noopener noreferrer">
-              Eunjin Ahn
-            </a>
-          </div>
-        </div>
-        <div className="contact-link">
-          <div>
-            <strong>GitHub</strong>
-            <a href="https://github.com/euenjin" target="_blank" rel="noopener noreferrer">
-              euenjin
-            </a>
-          </div>
-        </div>
+        {contacts.map((contact) => (
+          <a
+            key={contact.label}
+            href={contact.href}
+            target={contact.href.startsWith('http') ? '_blank' : undefined}
+            rel={contact.href.startsWith('http') ? 'noreferrer' : undefined}
+            className="contact-link"
+          >
+            <span className={`contact-icon ${contact.tone}`}>{contact.icon}</span>
+            <span>{contact.label}</span>
+            <strong>{contact.value}</strong>
+          </a>
+        ))}
       </div>
     </section>
   )
