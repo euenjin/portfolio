@@ -15,7 +15,7 @@ export default function ResearchDetail({ slug }) {
   }
 
   return (
-    <main className="project-page">
+    <main className="project-page research-page">
       <div className="project-page-inner">
         <nav className="project-breadcrumb" aria-label="Research breadcrumb">
           <a className="back-button" href="/#experience">Back</a>
