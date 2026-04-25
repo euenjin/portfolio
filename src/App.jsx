@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import Hero from './components/Hero'
 import Research from './components/Research'
 import Projects from './components/Projects'
@@ -11,21 +12,34 @@ function App() {
   const researchMatch = window.location.pathname.match(/^\/research\/([^/]+)\/?$/)
 
   if (projectMatch) {
-    return <ProjectDetail slug={projectMatch[1]} />
+    return (
+      <>
+        <ProjectDetail slug={projectMatch[1]} />
+        <Analytics />
+      </>
+    )
   }
 
   if (researchMatch) {
-    return <ResearchDetail slug={researchMatch[1]} />
+    return (
+      <>
+        <ResearchDetail slug={researchMatch[1]} />
+        <Analytics />
+      </>
+    )
   }
 
   return (
-    <div className="portfolio">
-      <Hero />
-      <Research />
-      <Projects />
-      <Skills />
-      <Contact />
-    </div>
+    <>
+      <div className="portfolio">
+        <Hero />
+        <Research />
+        <Projects />
+        <Skills />
+        <Contact />
+      </div>
+      <Analytics />
+    </>
   )
 }
 
