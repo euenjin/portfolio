@@ -44,6 +44,30 @@ export default function Projects() {
 }
 
 export function ProjectVisual({ project }) {
+  if (project.preview === 'glp1-medicare') {
+    return (
+      <div className="project-visual medicare-visual" aria-label="GLP-1 Medicare analytics visual">
+        <div className="medicare-dashboard">
+          <div className="medicare-header">
+            <span>CMS Part D</span>
+            <strong>GLP-1 Analytics</strong>
+          </div>
+          <div className="medicare-kpis">
+            <div><span>Records</span><strong>349K+</strong></div>
+            <div><span>Metrics</span><strong>Cost</strong></div>
+            <div><span>Output</span><strong>BI</strong></div>
+          </div>
+          <div className="medicare-bars" aria-hidden="true">
+            <span style={{ '--bar': '74%' }} />
+            <span style={{ '--bar': '52%' }} />
+            <span style={{ '--bar': '88%' }} />
+            <span style={{ '--bar': '38%' }} />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   if (project.preview === 'apple-health') {
     return (
       <div className="project-visual apple-health-visual" aria-label="Apple Health dashboard visual">

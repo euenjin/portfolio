@@ -17,9 +17,9 @@ export default function ResearchDetail({ slug }) {
   return (
     <main className="project-page research-page">
       <div className="project-page-inner">
-        <nav className="project-breadcrumb" aria-label="Research breadcrumb">
+        <nav className="project-breadcrumb" aria-label="Experience breadcrumb">
           <a className="back-button" href="/#experience">Back</a>
-          <a href="/#experience">Research</a>
+          <a href="/#experience">Experience</a>
           <span>{item.organization}</span>
         </nav>
 
@@ -42,8 +42,12 @@ export default function ResearchDetail({ slug }) {
             <article className="detail-panel detail-tech-panel">
               <div className="detail-panel-heading">
                 <h2>Methods Used</h2>
-                <div className="research-logo-inline">
-                  <img src={photos[item.logo]} alt={`${item.organization} logo`} />
+                <div className="research-logo-inline text-logo">
+                  {photos[item.logo] ? (
+                    <img src={photos[item.logo]} alt={`${item.organization} logo`} />
+                  ) : (
+                    <strong>{item.logoText || item.organization.slice(0, 2)}</strong>
+                  )}
                 </div>
               </div>
               <div className="tool-row">

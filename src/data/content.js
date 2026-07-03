@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Eunjin (Eugene) Ahn',
-  role: 'Health Data Science Portfolio',
+  role: 'Data Science Portfolio',
   location: 'Fort Lee, NJ',
   email: 'eunjin7714@gmail.com',
   phone: '+1 (206) 887-4095',
@@ -8,46 +8,71 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/eunjin-eugene-ahn/',
   resume: '/Resume_Eunjin_Ahn.pdf',
   headline:
-    'NYU data science student building interpretable clinical ML systems for longitudinal health data, Alzheimer risk, diabetes screening, and recall-first risk prediction.',
+    'NYU data science student building health analytics, clinical ML, survival analysis, and automation tools across cancer screening, Medicare pharmacy data, and longitudinal clinical records.',
   highlights: [
-    { value: '200K+', label: 'clinical records processed' },
-    { value: '0.89', label: 'DNN recall on Alzheimer risk baseline' },
-    { value: '0.82', label: 'MLP recall for diabetes screening' },
-    { value: '1,417 days', label: 'of Apple Health data visualized' },
+    { value: '349K+', label: 'Medicare pharmacy records extracted' },
+    { value: '200K+', label: 'longitudinal clinical records processed' },
+    { value: '83%', label: 'delivery file processing time reduced' },
+    { value: '5 years', label: 'of Apple Health trends supported' },
   ],
 }
 
 export const keywords = [
-  'Clinical Prediction',
-  'Longitudinal Data',
-  'Alzheimer Risk',
-  'Diabetes Screening',
+  'Cancer Screening',
+  'Medicare Part D',
+  'Clinical ML',
+  'Health ETL',
   'Survival Analysis',
-  'Recall-First Modeling',
-  'Health Equity Signals',
-  'Automated Pipelines',
+  'Cox Proportional Hazards',
+  'Kaplan-Meier Analysis',
+  'Streamlit Automation',
+  'Power BI Analytics',
   'Interpretability',
-  'Real-World Data',
+  'Real-World Health Data',
 ]
 
 export const projects = [
+  {
+    slug: 'glp1-medicare-pharmacy-analytics',
+    title: 'GLP-1 Medicare Pharmacy Analytics',
+    period: 'May 2026 - June 2026',
+    type: 'Health Data Engineering',
+    summary:
+      'A Python ETL and Power BI analytics project using CMS Medicare Part D Prescribers data to study GLP-1 and incretin therapy prescription patterns, utilization, and cost signals.',
+    metrics: [
+      { value: '349K+', label: 'GLP-1 and incretin records extracted' },
+      { value: 'CMS API', label: 'Medicare Part D Prescribers source' },
+      { value: '3 cost metrics', label: 'claim, 30-day fill, beneficiary views' },
+    ],
+    results: [
+      'Built a Python ETL pipeline using the CMS Medicare Part D Prescribers API with checkpointing for reliable large-record extraction.',
+      'Standardized brand, generic, and drug-class mappings for GLP-1 and incretin therapy records.',
+      'Engineered utilization and cost metrics including cost per claim, cost per 30-day fill, and claims per beneficiary.',
+      'Prepared a structured analytics layer for Power BI exploration of drug class, cost, and prescribing patterns.',
+    ],
+    tools: ['Python', 'CMS Medicare API', 'Pandas', 'ETL', 'Power BI', 'Healthcare Analytics'],
+    github: '',
+    preview: 'glp1-medicare',
+    impact:
+      'Makes large-scale Medicare pharmacy data easier to analyze for utilization, cost, and therapy-class trends.',
+  },
   {
     slug: 'apple-health-dashboard',
     title: 'Apple Health Personal Dashboard',
     period: 'April 2026',
     type: 'Health Analytics App',
     summary:
-      'A privacy-centered Streamlit dashboard that turns an Apple Health ZIP export into local activity, workout, and heart-rate trend views.',
+      'A privacy-centered Streamlit dashboard that parses local Apple Health ZIP exports and visualizes activity, workout, and heart-rate trends without cloud storage.',
     metrics: [
-      { value: '1,417 tracked days', label: 'range for analysis' },
-      { value: '4 daily variables visualized', label: 'steps, distance, exercise, HR' },
-      { value: '24 workouts imported', label: 'workout history' },
+      { value: '5 years', label: 'of local health history supported' },
+      { value: '3 import modes', label: '30-day, 90-day, full history' },
+      { value: 'Local only', label: 'privacy-centered processing' },
     ],
     results: [
-      'Built a manual Apple Health sync flow that uploads a ZIP export and parses it locally.',
-      'Normalized exported records into local datasets for daily trends, workouts, and heart-rate analysis.',
-      'Added import options for 30 days, 90 days, or all available history with progress feedback during long ZIP parsing tasks.',
-      'Created dashboard pages for recent activity snapshots, daily trends, workout history, and fresh data sync.',
+      'Built a manual Apple Health sync flow that uploads a ZIP export and parses activity, workout, and heart-rate records locally.',
+      'Added 30-day, 90-day, and full-history import options to support fast refreshes or deeper personal health review.',
+      'Normalized exported records into dashboard-ready datasets for daily trends, workout history, and recent activity snapshots.',
+      'Kept the workflow local so personal health analytics can be refreshed without cloud storage.',
     ],
     tools: ['Python', 'Streamlit', 'Apple Health Export', 'Data Parsing', 'Local Analytics'],
     github: 'https://github.com/euenjin/AppleHealth_Streamlit_Dashboard',
@@ -55,33 +80,55 @@ export const projects = [
     impact:
       'Makes personal health data review practical without cloud sync, keeping the workflow local, private, and easy to refresh manually.',
   },
-  {
-    slug: 'public-health-news-pipeline',
-    title: 'Automated Public Health News Pipeline',
-    period: 'February 2026 - April 2026',
-    type: 'Data Engineering',
-    summary:
-      'A scheduled Python pipeline that extracts, filters, ranks, archives, and emails public health, medical, and clinical research news every weekday.',
-    metrics: [
-      { value: '10 daily articles', label: 'weekday digest size' },
-      { value: '1-2 day recency', label: 'freshness filter' },
-      { value: '~3 min daily runtime', label: 'scheduled execution' },
-    ],
-    results: [
-      'Integrated NewsAPI extraction with health topic relevance, recency, and source relevance ranking.',
-      'Scheduled weekday execution through Windows Task Scheduler to reduce manual monitoring work.',
-      'Added logging, timestamped file saving, and email delivery so public health digests can be audited and reused.',
-      'Includes a clear note that the digest is for public health monitoring and research awareness, not medical decision-making.',
-    ],
-    tools: ['Python', 'NewsAPI', 'Task Scheduler', 'Automation', 'Logging', 'Public Health', 'Clinical Research'],
-    github: 'https://github.com/euenjin/News_Pipeline',
-    preview: 'news-pipeline',
-    impact:
-      'Supports lightweight monitoring of public health updates across topics like Alzheimer\'s, diabetes, CDC updates, clinical AI, digital health, epidemiology, and health policy.',
-  },
 ]
 
 export const experience = [
+  {
+    slug: 'ncc-gastric-cancer-screening',
+    role: 'Cancer Screening Division Research Intern',
+    organization: 'National Cancer Center Korea',
+    location: 'Goyang, KR',
+    period: 'June 2026 - Current',
+    focus:
+      'Retrospective gastric cancer cohort study using screening history, insurance status, socioeconomic factors, and comorbidity categories to evaluate predictors of advanced-stage diagnosis.',
+    logoText: 'NCC',
+    visual: 'cancer-screening',
+    metrics: [
+      { value: '3 ML models', label: 'logistic regression, random forest, XGBoost' },
+      { value: 'SHAP', label: 'planned interpretability analysis' },
+      { value: 'Survival', label: 'post-diagnosis mortality modeling' },
+    ],
+    bullets: [
+      'Designed a retrospective gastric cancer cohort study to evaluate predictors of advanced-stage diagnosis.',
+      'Built a Python-based simulation pipeline to benchmark logistic regression, random forest, and XGBoost models on runtime, memory usage, and feasibility.',
+      'Planned SHAP analysis to explain model outputs and support interpretable screening-risk evidence.',
+      'Planned post-diagnosis survival analysis with Kaplan-Meier curves and Cox proportional hazards models adjusted for demographic and comorbidity covariates.',
+    ],
+    tags: ['Cancer Screening', 'Python', 'XGBoost', 'SHAP', 'Cox PH', 'Kaplan-Meier'],
+  },
+  {
+    slug: 'furniture-smart-automation',
+    role: 'Data Automation Intern',
+    organization: 'Furniture Smart',
+    location: 'Seoul, KR',
+    period: 'April 2026 - June 2026',
+    focus:
+      'Python and Streamlit automation for SmartStore order exports, delivery-ready Excel generation, public-data lookup, and revenue dashboarding.',
+    logoText: 'FS',
+    visual: 'automation',
+    metrics: [
+      { value: '83%', label: 'processing time reduction' },
+      { value: 'ETL', label: 'bundled order and option handling' },
+      { value: 'API', label: 'public-data elevator lookup' },
+    ],
+    bullets: [
+      'Built a Python and Streamlit tool to convert Naver SmartStore exports into standardized delivery-ready Excel files, reducing processing time by 83%.',
+      'Designed rule-based ETL workflows for bundled orders, add-on options, quantity expansion, duplicate handling, and validation checks.',
+      'Automated elevator lookup with a public-data API to improve delivery preparation workflows.',
+      'Created a Streamlit dashboard to track settlement revenue, order channels, and top-selling products.',
+    ],
+    tags: ['Python', 'Streamlit', 'ETL', 'Excel Automation', 'Public Data API'],
+  },
   {
     slug: 'snu-alzheimer-risk-modeling',
     role: 'Undergraduate Data Science Research Intern',
@@ -93,63 +140,27 @@ export const experience = [
     visual: 'alzheimer',
     metrics: [
       { value: '200K+', label: 'longitudinal clinical records' },
-      { value: '0.89', label: 'DNN recall' },
-      { value: '0.76', label: 'Cox model C-index' },
+      { value: 'MICE', label: 'clinical missing-data imputation' },
+      { value: 'Cox PH', label: 'survival modeling' },
     ],
     bullets: [
-      'Processed 200K+ longitudinal clinical records using MICE imputation for reliable predictive modeling.',
-      'Built a deep neural network baseline classifier with 0.89 recall and 0.72 precision using class reweighting.',
-      'Improved recall by 8 percentage points with a 10-visit LSTM sequence model.',
-      'Used Cox proportional hazards and Kaplan-Meier analysis to compare age-group survival differences, reaching a 0.76 C-index.',
+      'Processed 200K+ longitudinal clinical records using MICE imputation and patient-level restructuring to prepare reliable datasets for Alzheimer\'s risk modeling.',
+      'Developed predictive and survival analysis models including logistic regression, DNN, and Cox regression.',
+      'Identified risk factors and compared disease progression patterns across age groups.',
+      'Used survival analysis methods to connect longitudinal clinical history with disease progression evidence.',
     ],
-    tags: ['MICE', 'DNN', 'LSTM', 'Cox PH', 'Kaplan-Meier'],
-  },
-  {
-    slug: 'gachon-diabetes-risk-modeling',
-    role: 'Data Science Research Intern',
-    organization: 'Gachon University',
-    location: 'Seoul, KR',
-    period: 'June 2023 - September 2023',
-    focus: 'Diabetes risk modeling with CDC BRFSS 2015 survey data',
-    logo: 'gachon',
-    visual: 'diabetes',
-    metrics: [
-      { value: '0.77', label: 'logistic regression recall' },
-      { value: '0.82', label: 'MLP recall' },
-      { value: 'BRFSS', label: 'public health survey data' },
-    ],
-    bullets: [
-      'Modeled diabetes risk using demographic, health, and lifestyle features from BRFSS survey data.',
-      'Built an interpretable logistic regression baseline with 0.77 recall and 0.74 precision.',
-      'Improved sensitivity to 0.82 recall with an MLP classifier for high-risk identification.',
-      'Identified high blood pressure, self-reported health status, income, and education as important risk signals.',
-    ],
-    tags: ['BRFSS', 'Logistic Regression', 'MLP', 'Public Health', 'Risk Factors'],
+    tags: ['MICE', 'Logistic Regression', 'DNN', 'Cox PH', 'Longitudinal Data'],
   },
 ]
 
-export const leadership = [
-  {
-    role: 'Member of Data Team',
-    organization: 'NYU LIKELION US',
-    period: 'August 2025 - Current',
-    detail:
-      'Participates in weekly SQL discussions and ideation work for an event platform using AI scheduling and recommendation logic.',
-  },
-  {
-    role: 'Executive Member',
-    organization: 'KISO NYU',
-    period: 'January 2024 - Current',
-    detail:
-      'Organizes cultural exchange events and led a 50+ attendee networking event connecting students with industry professionals.',
-  },
-]
+export const leadership = []
 
 export const techStack = {
   'Programming + Data': ['Python', 'SQL', 'Pandas', 'NumPy', 'Seaborn'],
-  'Machine Learning': ['Scikit-learn', 'PyTorch', 'Logistic Regression', 'MLP', 'DNN'],
-  'Health Modeling': ['LSTM Time Series', 'MICE Imputation', 'Cox Models', 'Kaplan-Meier', 'Classification'],
-  'Analytics + Delivery': ['Streamlit', 'Tableau', 'Power BI', 'GitHub', 'Automated Logging'],
+  'Machine Learning': ['Scikit-learn', 'PyTorch', 'Logistic Regression', 'MLP', 'DNN', 'XGBoost'],
+  'Health Modeling': ['Classification', 'Survival Analysis', 'Cox Proportional Hazards', 'Kaplan-Meier', 'SHAP'],
+  'Analytics + Delivery': ['Streamlit', 'Tableau', 'Power BI', 'GitHub', 'Excel Automation'],
+  Languages: ['English', 'Korean'],
 }
 
 export const education = {
@@ -157,6 +168,6 @@ export const education = {
   degree: 'Bachelor\'s Degree in Data Science',
   expected: 'Expected May 2028',
   gpa: '3.722',
-  awards: ['Presidential Honors Scholar', 'Dean\'s List'],
-  coursework: ['Data Structures', 'Data Management and Analysis', 'Linear Algebra', 'Probability and Statistics'],
+  awards: ['Presidential Honors Scholar (24F, 25S, 25F)', 'Dean\'s List (24F, 25S, 25F)'],
+  coursework: ['Data Structures', 'Data Management', 'Probability and Statistics', 'Behavioral Statistics'],
 }
