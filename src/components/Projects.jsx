@@ -44,6 +44,14 @@ export default function Projects() {
 }
 
 export function ProjectVisual({ project }) {
+  if (project.image) {
+    return (
+      <div className="project-visual project-image-visual">
+        <img src={project.image} alt={project.imageAlt || project.title} />
+      </div>
+    )
+  }
+
   if (project.preview === 'glp1-medicare') {
     return (
       <div className="project-visual medicare-visual" aria-label="GLP-1 Medicare analytics visual">
@@ -63,47 +71,6 @@ export function ProjectVisual({ project }) {
             <span style={{ '--bar': '88%' }} />
             <span style={{ '--bar': '38%' }} />
           </div>
-        </div>
-      </div>
-    )
-  }
-
-  if (project.preview === 'apple-health') {
-    return (
-      <div className="project-visual apple-health-visual" aria-label="Apple Health dashboard visual">
-        <div className="apple-dashboard-shot">
-          <aside>
-            <b>app</b>
-            <span>Daily Trends</span>
-            <span>Workouts</span>
-            <span>Sync Apple Health</span>
-          </aside>
-          <main>
-            <div className="shot-title">
-              <strong>Apple Health Personal Dashboard</strong>
-              <span>A personal Apple Watch and Apple Health dashboard.</span>
-            </div>
-            <div className="shot-stats">
-              <div><span>Tracked Days</span><strong>1,417</strong></div>
-              <div><span>Latest Steps</span><strong>26,156</strong></div>
-              <div><span>Resting HR</span><strong>52.6</strong></div>
-              <div><span>Workouts</span><strong>24</strong></div>
-            </div>
-            <div className="shot-content">
-              <div className="shot-chart">
-                <svg viewBox="0 0 260 112" aria-hidden="true">
-                  <polyline points="6,78 28,88 46,62 68,96 90,70 112,64 134,86 156,54 178,82 200,24 222,44 250,30" />
-                  <polyline className="soft" points="6,100 28,99 46,101 68,100 90,99 112,100 134,99 156,100 178,99 200,99 222,100 250,99" />
-                </svg>
-              </div>
-              <div className="shot-table">
-                <span />
-                <span />
-                <span />
-                <span />
-              </div>
-            </div>
-          </main>
         </div>
       </div>
     )

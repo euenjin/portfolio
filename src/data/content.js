@@ -32,6 +32,77 @@ export const keywords = [
 
 export const projects = [
   {
+    slug: 'knhanes-mental-health-risk-modeling',
+    title: 'Mental Health Risk Modeling with KNHANES',
+    subtitle: 'Depressive Symptom Prediction Using National Health Survey Data',
+    period: '2026 - Current',
+    type: 'Independent Health Data Science Project',
+    summary:
+      'A population-based health analytics study using five waves of the Korea National Health and Nutrition Examination Survey to examine whether demographic, behavioral, sleep, physical activity, and cardiometabolic factors can predict clinically relevant depressive symptoms.',
+    metrics: [
+      { value: '36K+ Records', label: 'Survey participants across five KNHANES waves' },
+      { value: '5 Survey Waves', label: '2016, 2018, 2020, 2022, and 2024' },
+      { value: 'PHQ-9 Outcome', label: 'Depressive symptom risk classification' },
+    ],
+    workflow: [
+      {
+        title: 'Multi-Year Data Integration',
+        description: 'Combined KNHANES survey waves from 2016, 2018, 2020, 2022, and 2024 while accounting for differences in variable names and survey structures across years.',
+      },
+      {
+        title: 'Outcome Definition',
+        description: 'Used the Patient Health Questionnaire-9 as the primary outcome and defined clinically relevant depressive symptoms using a consistent PHQ-9 classification threshold.',
+      },
+      {
+        title: 'Variable Harmonization',
+        description: 'Standardized demographic, socioeconomic, sleep, physical activity, blood pressure, fasting glucose, pulse, and health-behavior variables across survey waves.',
+      },
+      {
+        title: 'Feature Engineering',
+        description: 'Converted year-specific sleep and physical-activity responses into comparable measures, including sleep duration and weekly activity minutes.',
+      },
+      {
+        title: 'Data Quality Control',
+        description: 'Handled nonresponse codes, inapplicable values, missing observations, inconsistent data types, and implausible physiological or behavioral values.',
+      },
+      {
+        title: 'Risk Modeling',
+        description: 'Designed classification models to evaluate whether demographic, behavioral, and clinical characteristics can predict elevated depressive symptoms.',
+      },
+      {
+        title: 'Model Evaluation',
+        description: 'Planned cross-validation and class-imbalance-aware evaluation using ROC-AUC, recall, precision, F1-score, and confusion-matrix results.',
+      },
+      {
+        title: 'Model Interpretation',
+        description: 'Planned SHAP-based interpretation to identify factors contributing to depressive symptom predictions while retaining adjustment variables in the model.',
+      },
+    ],
+    methodGroups: [
+      {
+        title: 'Data Processing',
+        items: ['Python', 'Pandas', 'SPSS', 'Multi-Year Data Integration', 'Feature Engineering', 'Data Validation'],
+      },
+      {
+        title: 'Modeling & Interpretation',
+        items: ['Logistic Regression', 'Random Forest', 'XGBoost', 'Cross-Validation', 'Class-Imbalance Evaluation', 'SHAP'],
+      },
+    ],
+    analysis: {
+      status: 'In Progress',
+      description: 'Model performance, feature-importance results, and subgroup analyses will be added after completion of the final modeling workflow.',
+    },
+    scopeNote:
+      'KNHANES is a repeated cross-sectional national health survey. Analyses are designed for population-level association and prediction rather than individual clinical diagnosis.',
+    tools: ['Python', 'Pandas', 'SPSS', 'Logistic Regression', 'Random Forest', 'XGBoost', 'SHAP'],
+    results: [],
+    github: '',
+    image: '/knhanes-mental-health-analytics.png',
+    imageAlt: 'Population health analytics illustration connecting sleep, physical activity, cardiometabolic health, and predictive modeling signals',
+    impact:
+      'Supports responsible, interpretable population-level modeling of depressive symptom risk across harmonized national survey waves.',
+  },
+  {
     slug: 'glp1-medicare-pharmacy-analytics',
     title: 'GLP-1 Medicare Pharmacy Analytics',
     period: 'May 2026 - June 2026',
@@ -54,30 +125,6 @@ export const projects = [
     preview: 'glp1-medicare',
     impact:
       'Makes large-scale Medicare pharmacy data easier to analyze for utilization, cost, and therapy-class trends.',
-  },
-  {
-    slug: 'apple-health-dashboard',
-    title: 'Apple Health Personal Dashboard',
-    period: 'April 2026',
-    type: 'Health Analytics App',
-    summary:
-      'A privacy-centered Streamlit dashboard that parses local Apple Health ZIP exports and visualizes activity, workout, and heart-rate trends without cloud storage.',
-    metrics: [
-      { value: '5 years', label: 'of local health history supported' },
-      { value: '3 import modes', label: '30-day, 90-day, full history' },
-      { value: 'Local only', label: 'privacy-centered processing' },
-    ],
-    results: [
-      'Built a manual Apple Health sync flow that uploads a ZIP export and parses activity, workout, and heart-rate records locally.',
-      'Added 30-day, 90-day, and full-history import options to support fast refreshes or deeper personal health review.',
-      'Normalized exported records into dashboard-ready datasets for daily trends, workout history, and recent activity snapshots.',
-      'Kept the workflow local so personal health analytics can be refreshed without cloud storage.',
-    ],
-    tools: ['Python', 'Streamlit', 'Apple Health Export', 'Data Parsing', 'Local Analytics'],
-    github: 'https://github.com/euenjin/AppleHealth_Streamlit_Dashboard',
-    preview: 'apple-health',
-    impact:
-      'Makes personal health data review practical without cloud sync, keeping the workflow local, private, and easy to refresh manually.',
   },
 ]
 
