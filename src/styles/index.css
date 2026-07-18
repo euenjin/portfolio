@@ -1725,6 +1725,14 @@ section,
   overflow-wrap: break-word;
 }
 
+.project-detail-copy .detail-subtitle {
+  margin-top: 18px;
+  color: #087a70;
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.3;
+  font-weight: 900;
+}
+
 .project-detail-copy p {
   max-width: 760px;
   color: #344054;
@@ -1857,6 +1865,17 @@ section,
   box-shadow: none;
 }
 
+.method-groups {
+  display: grid;
+  gap: 24px;
+}
+
+.method-group h3 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
 .detail-list {
   display: grid;
   gap: 22px;
@@ -1870,6 +1889,73 @@ section,
   padding-left: 28px;
   color: #475467;
   font-size: 1.06rem;
+}
+
+.detail-list li strong,
+.detail-list li span {
+  display: block;
+}
+
+.expanded-detail-sections {
+  display: grid;
+  gap: 46px;
+  margin-top: 46px;
+}
+
+.workflow-panel-expanded .detail-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.workflow-panel-expanded .detail-list li {
+  min-width: 0;
+  padding: 22px 22px 22px 48px;
+  border: 1px solid rgba(216, 226, 223, 0.95);
+  border-radius: 14px;
+  background: white;
+}
+
+.workflow-panel-expanded .detail-list li::before {
+  left: 20px;
+  top: 28px;
+}
+
+.internal-application > h2 {
+  margin-bottom: 20px;
+  color: var(--ink);
+  font-size: clamp(1.7rem, 2.6vw, 2.6rem);
+}
+
+.application-screenshot-card {
+  margin: 0;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.application-screenshot-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(216, 226, 223, 0.95);
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.application-screenshot-card figcaption {
+  padding: 18px 8px 4px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.detail-list li strong {
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+
+.detail-list li span {
+  line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 
 .detail-list li::before {
@@ -1887,6 +1973,34 @@ section,
 .detail-panel .tool-row span {
   background: #eef8f6;
   color: #087a70;
+}
+
+.analysis-results {
+  margin-top: 46px;
+}
+
+.analysis-results > h2 {
+  margin-bottom: 20px;
+  color: var(--ink);
+  font-size: clamp(1.7rem, 2.6vw, 2.6rem);
+}
+
+.analysis-placeholder {
+  text-align: center;
+}
+
+.analysis-placeholder strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #087a70;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.analysis-placeholder p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.65;
 }
 
 @media (max-width: 900px) {
@@ -1915,6 +2029,10 @@ section,
 
   .project-page-inner {
     width: min(100% - 28px, 1440px);
+  }
+
+  .workflow-panel-expanded .detail-list {
+    grid-template-columns: 1fr;
   }
 }
 

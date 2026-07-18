@@ -8,12 +8,11 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/eunjin-eugene-ahn/',
   resume: '/Resume_Eunjin_Ahn.pdf',
   headline:
-    'NYU data science student building health analytics, clinical ML, survival analysis, and automation tools across cancer screening, Medicare pharmacy data, and longitudinal clinical records.',
+    'NYU data science student applying machine learning, healthcare analytics, and automation to clinical research and real-world business problems.',
   highlights: [
-    { value: '349K+', label: 'Medicare pharmacy records extracted' },
-    { value: '200K+', label: 'longitudinal clinical records processed' },
-    { value: '83%', label: 'delivery file processing time reduced' },
-    { value: '5 years', label: 'of Apple Health trends supported' },
+    { value: '349K+', label: 'Medicare prescribing records' },
+    { value: '180K+', label: 'gastric cancer patients' },
+    { value: '83%', label: 'reduction in processing time' },
   ],
 }
 
@@ -86,47 +85,132 @@ export const experience = [
   {
     slug: 'ncc-gastric-cancer-screening',
     role: 'Cancer Screening Division Research Intern',
+    subtitle: 'Gastric Cancer Stage and Survival Modeling',
     organization: 'National Cancer Center Korea',
     location: 'Goyang, KR',
     period: 'June 2026 - Current',
     focus:
       'Retrospective gastric cancer cohort study using screening history, insurance status, socioeconomic factors, and comorbidity categories to evaluate predictors of advanced-stage diagnosis.',
+    detailFocus:
+      'A retrospective gastric cancer cohort study comparing machine learning performance and SHAP-based interpretability for advanced-stage diagnosis, alongside post-diagnosis survival analysis.',
     logoText: 'NCC',
     visual: 'cancer-screening',
     metrics: [
-      { value: '3 ML models', label: 'logistic regression, random forest, XGBoost' },
-      { value: 'SHAP', label: 'planned interpretability analysis' },
-      { value: 'Survival', label: 'post-diagnosis mortality modeling' },
+      { value: '180K+ Patients', label: 'Population-based gastric cancer cohort' },
+      { value: '3 ML Models', label: 'Logistic regression, random forest, and XGBoost' },
+      { value: '2 Outcomes', label: 'Advanced-stage diagnosis and five-year mortality' },
     ],
-    bullets: [
-      'Designed a retrospective gastric cancer cohort study to evaluate predictors of advanced-stage diagnosis.',
-      'Built a Python-based simulation pipeline to benchmark logistic regression, random forest, and XGBoost models on runtime, memory usage, and feasibility.',
-      'Planned SHAP analysis to explain model outputs and support interpretable screening-risk evidence.',
-      'Planned post-diagnosis survival analysis with Kaplan-Meier curves and Cox proportional hazards models adjusted for demographic and comorbidity covariates.',
+    workflow: [
+      {
+        title: 'Cohort Construction',
+        description: 'Identified patients newly diagnosed with gastric cancer between 2012 and 2017 and defined the earliest recorded diagnosis as the index date.',
+      },
+      {
+        title: 'Cohort Exclusion',
+        description: 'Excluded patients diagnosed with another primary cancer within one year before the index gastric cancer diagnosis.',
+      },
+      {
+        title: 'Feature Engineering',
+        description: 'Derived five-year pre-diagnosis screening history, socioeconomic characteristics, insurance status, treatment indicators, and claims-based comorbidity categories.',
+      },
+      {
+        title: 'Stage Prediction',
+        description: 'Developed logistic regression, random forest, and XGBoost models to predict advanced-stage gastric cancer at diagnosis.',
+      },
+      {
+        title: 'Performance and Interpretation',
+        description: 'Designed a cross-validation framework to compare classification performance and apply SHAP to interpret predictor contributions.',
+      },
+      {
+        title: 'Survival Analysis',
+        description: 'Designed post-diagnosis survival analyses using stage, comorbidities, treatment, and patient characteristics.',
+      },
     ],
+    methodGroups: [
+      {
+        title: 'Data & Modeling',
+        items: ['SAS', 'Python', 'Logistic Regression', 'Random Forest', 'XGBoost'],
+      },
+      {
+        title: 'Interpretation & Survival',
+        items: ['Cross-Validation', 'SHAP', 'Kaplan–Meier', 'Cox Proportional Hazards'],
+      },
+    ],
+    analysis: {
+      status: 'In Progress',
+      description: 'Model performance, SHAP interpretation, and survival-analysis findings will be added after completion of the final analysis.',
+    },
     tags: ['Cancer Screening', 'Python', 'XGBoost', 'SHAP', 'Cox PH', 'Kaplan-Meier'],
   },
   {
     slug: 'furniture-smart-automation',
     role: 'Data Automation Intern',
+    subtitle: 'Order Processing and Workflow Automation',
     organization: 'Furniture Smart',
     location: 'Seoul, KR',
     period: 'April 2026 - June 2026',
     focus:
       'Python and Streamlit automation for SmartStore order exports, delivery-ready Excel generation, public-data lookup, and revenue dashboarding.',
+    detailFocus:
+      'An end-to-end workflow automation project that transformed raw Naver SmartStore order exports into standardized vendor and delivery files, integrated public-data lookups, and delivered the workflow through an internal Streamlit application.',
     logoText: 'FS',
     visual: 'automation',
     metrics: [
-      { value: '83%', label: 'processing time reduction' },
-      { value: 'ETL', label: 'bundled order and option handling' },
-      { value: 'API', label: 'public-data elevator lookup' },
+      { value: '83% Faster', label: 'Reduction in recurring order-processing time' },
+      { value: 'Rule-Based ETL', label: 'Bundled orders, options, quantities, and validation' },
+      { value: 'Internal App', label: 'File conversion, API lookup, and operational reporting' },
     ],
-    bullets: [
-      'Built a Python and Streamlit tool to convert Naver SmartStore exports into standardized delivery-ready Excel files, reducing processing time by 83%.',
-      'Designed rule-based ETL workflows for bundled orders, add-on options, quantity expansion, duplicate handling, and validation checks.',
-      'Automated elevator lookup with a public-data API to improve delivery preparation workflows.',
-      'Created a Streamlit dashboard to track settlement revenue, order channels, and top-selling products.',
+    expandedDetail: true,
+    workflowTitle: 'Automation Workflow',
+    workflow: [
+      {
+        title: 'Process Mapping',
+        description: 'Mapped the existing manual workflow for converting Naver SmartStore order exports into vendor-management and delivery-ready files.',
+      },
+      {
+        title: 'Transformation Rules',
+        description: 'Defined field-mapping and standardization rules for order identifiers, product names, option values, recipients, addresses, quantities, and required vendor fields.',
+      },
+      {
+        title: 'Exception Handling',
+        description: 'Implemented logic for bundled orders, add-on options, multi-quantity purchases, duplicate records, missing values, and validation checks.',
+      },
+      {
+        title: 'File Automation',
+        description: 'Built a Python and Pandas pipeline that converted raw order exports into standardized Excel files for vendor processing and delivery operations.',
+      },
+      {
+        title: 'Internal Application',
+        description: 'Developed a Streamlit interface that allowed nontechnical employees to upload order files and generate the required outputs through a simple application.',
+      },
+      {
+        title: 'Data Enrichment',
+        description: 'Integrated a Korean public-data API to automate elevator availability lookup and support delivery preparation.',
+      },
+      {
+        title: 'Operational Reporting',
+        description: 'Added Streamlit-based reporting views for settlement revenue, order channels, and top-selling products.',
+      },
+      {
+        title: 'Business Impact',
+        description: 'Reduced recurring order-processing time by 83% while improving consistency and reducing manual data entry.',
+      },
     ],
+    methodGroups: [
+      {
+        title: 'Automation & Data Processing',
+        items: ['Python', 'Pandas', 'Excel', 'Rule-Based ETL', 'Data Validation'],
+      },
+      {
+        title: 'Application & Integration',
+        items: ['Streamlit', 'API Integration', 'Workflow Automation', 'Operational Reporting'],
+      },
+    ],
+    internalApplication: {
+      image: '/furniture-smart-file-converter.png',
+      alt: 'Furniture Smart internal Streamlit application for order file conversion and operational reporting',
+      caption: 'Internal Streamlit application developed to convert raw order exports into vendor and delivery-ready files and provide access to operational reporting.',
+    },
     tags: ['Python', 'Streamlit', 'ETL', 'Excel Automation', 'Public Data API'],
   },
   {
