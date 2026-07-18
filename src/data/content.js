@@ -97,6 +97,7 @@ export const experience = [
     visual: 'cancer-screening',
     thumbnail: '/national-cancer-center-stages.png',
     thumbnailFit: 'contain',
+    thumbnailPadding: true,
     metrics: [
       { value: '180K+ Patients', label: 'Population-based gastric cancer cohort' },
       { value: '3 ML Models', label: 'Logistic regression, random forest, and XGBoost' },
@@ -158,6 +159,7 @@ export const experience = [
     logoText: 'FS',
     visual: 'automation',
     thumbnail: '/furniture-smart-file-converter-home.png',
+    thumbnailFit: 'contain',
     metrics: [
       { value: '83% Faster', label: 'Reduction in recurring order-processing time' },
       { value: 'Rule-Based ETL', label: 'Bundled orders, options, quantities, and validation' },

@@ -1735,8 +1735,11 @@ section,
 }
 
 .research-card-visual.application-thumbnail.thumbnail-contain > img {
-  padding: 20px;
   object-fit: contain;
+}
+
+.research-card-visual.application-thumbnail.thumbnail-padded > img {
+  padding: 20px;
 }
 
 .research-card-visual.application-thumbnail::after {
