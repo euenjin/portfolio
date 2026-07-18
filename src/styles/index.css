@@ -1742,6 +1742,10 @@ section,
   padding: 20px;
 }
 
+.research-card-visual.application-thumbnail.thumbnail-zoomed > img {
+  transform: scale(1.15);
+}
+
 .research-card-visual.application-thumbnail::after {
   display: none;
 }

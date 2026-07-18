@@ -80,7 +80,7 @@ export function ResearchVisual({ item }) {
   }
 
   return (
-    <div className={`research-card-visual${item.thumbnail ? ' application-thumbnail' : ''}${item.thumbnailFit === 'contain' ? ' thumbnail-contain' : ''}${item.thumbnailPadding ? ' thumbnail-padded' : ''}`}>
+    <div className={`research-card-visual${item.thumbnail ? ' application-thumbnail' : ''}${item.thumbnailFit === 'contain' ? ' thumbnail-contain' : ''}${item.thumbnailPadding ? ' thumbnail-padded' : ''}${item.thumbnailZoom ? ' thumbnail-zoomed' : ''}`}>
       <img src={visual} alt={item.focus} />
       {!item.thumbnail && (
         <>

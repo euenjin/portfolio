@@ -160,6 +160,7 @@ export const experience = [
     visual: 'automation',
     thumbnail: '/furniture-smart-file-converter-home.png',
     thumbnailFit: 'contain',
+    thumbnailZoom: true,
     metrics: [
       { value: '83% Faster', label: 'Reduction in recurring order-processing time' },
       { value: 'Rule-Based ETL', label: 'Bundled orders, options, quantities, and validation' },
