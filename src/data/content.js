@@ -95,6 +95,8 @@ export const experience = [
       'A retrospective gastric cancer cohort study comparing machine learning performance and SHAP-based interpretability for advanced-stage diagnosis, alongside post-diagnosis survival analysis.',
     logoText: 'NCC',
     visual: 'cancer-screening',
+    thumbnail: '/national-cancer-center-stages.png',
+    thumbnailFit: 'contain',
     metrics: [
       { value: '180K+ Patients', label: 'Population-based gastric cancer cohort' },
       { value: '3 ML Models', label: 'Logistic regression, random forest, and XGBoost' },
@@ -155,6 +157,7 @@ export const experience = [
       'An end-to-end workflow automation project that transformed raw Naver SmartStore order exports into standardized vendor and delivery files, integrated public-data lookups, and delivered the workflow through an internal Streamlit application.',
     logoText: 'FS',
     visual: 'automation',
+    thumbnail: '/furniture-smart-file-converter-home.png',
     metrics: [
       { value: '83% Faster', label: 'Reduction in recurring order-processing time' },
       { value: 'Rule-Based ETL', label: 'Bundled orders, options, quantities, and validation' },
@@ -206,11 +209,18 @@ export const experience = [
         items: ['Streamlit', 'API Integration', 'Workflow Automation', 'Operational Reporting'],
       },
     ],
-    internalApplication: {
-      image: '/furniture-smart-file-converter.png',
-      alt: 'Furniture Smart internal Streamlit application for order file conversion and operational reporting',
-      caption: 'Internal Streamlit application developed to convert raw order exports into vendor and delivery-ready files and provide access to operational reporting.',
-    },
+    internalApplications: [
+      {
+        image: '/furniture-smart-converter-result.png',
+        alt: 'Furniture Smart SmartStore order converter showing an uploaded workbook and vendor-ready output preview',
+        caption: 'SmartStore order converter that validates uploaded workbooks, separates vendor and delivery records, previews the transformed output, and exports a standardized Excel file.',
+      },
+      {
+        image: '/furniture-smart-file-converter.png',
+        alt: 'Furniture Smart sales dashboard showing settlement revenue, order channels, products, order status, and product categories',
+        caption: 'Operational dashboard for monitoring estimated settlement revenue, acquisition channels, top-selling products, order status, and product-category performance.',
+      },
+    ],
     tags: ['Python', 'Streamlit', 'ETL', 'Excel Automation', 'Public Data API'],
   },
   {

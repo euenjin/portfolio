@@ -1725,6 +1725,24 @@ section,
   overflow-wrap: break-word;
 }
 
+.research-card-visual.application-thumbnail {
+  background: #f7f5f2;
+}
+
+.research-card-visual.application-thumbnail > img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.research-card-visual.application-thumbnail.thumbnail-contain > img {
+  padding: 20px;
+  object-fit: contain;
+}
+
+.research-card-visual.application-thumbnail::after {
+  display: none;
+}
+
 .project-detail-copy .detail-subtitle {
   margin-top: 18px;
   color: #087a70;
@@ -1924,6 +1942,11 @@ section,
   margin-bottom: 20px;
   color: var(--ink);
   font-size: clamp(1.7rem, 2.6vw, 2.6rem);
+}
+
+.application-gallery {
+  display: grid;
+  gap: 24px;
 }
 
 .application-screenshot-card {

@@ -56,7 +56,7 @@ export default function Research() {
 }
 
 export function ResearchVisual({ item }) {
-  const visual = photos[item.visual]
+  const visual = item.thumbnail || photos[item.visual]
   const logo = photos[item.logo]
 
   if (!visual) {
@@ -80,15 +80,19 @@ export function ResearchVisual({ item }) {
   }
 
   return (
-    <div className="research-card-visual">
+    <div className={`research-card-visual${item.thumbnail ? ' application-thumbnail' : ''}${item.thumbnailFit === 'contain' ? ' thumbnail-contain' : ''}`}>
       <img src={visual} alt={item.focus} />
-      <div className="research-logo-badge">
-        {logo ? <img src={logo} alt={`${item.organization} logo`} /> : <strong>{item.logoText || item.organization.slice(0, 2)}</strong>}
-      </div>
-      <div className="research-visual-caption">
-        <strong>{item.organization}</strong>
-        <span>{item.location}</span>
-      </div>
+      {!item.thumbnail && (
+        <>
+          <div className="research-logo-badge">
+            {logo ? <img src={logo} alt={`${item.organization} logo`} /> : <strong>{item.logoText || item.organization.slice(0, 2)}</strong>}
+          </div>
+          <div className="research-visual-caption">
+            <strong>{item.organization}</strong>
+            <span>{item.location}</span>
+          </div>
+        </>
+      )}
     </div>
   )
 }

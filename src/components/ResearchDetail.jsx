@@ -104,13 +104,17 @@ export default function ResearchDetail({ slug }) {
           <div className="expanded-detail-sections">
             <WorkflowPanel item={item} expanded />
 
-            {item.internalApplication && (
+            {item.internalApplications && (
               <section className="internal-application" aria-labelledby="internal-application-title">
                 <h2 id="internal-application-title">Internal Application</h2>
-                <figure className="detail-panel application-screenshot-card">
-                  <img src={item.internalApplication.image} alt={item.internalApplication.alt} />
-                  <figcaption>{item.internalApplication.caption}</figcaption>
-                </figure>
+                <div className="application-gallery">
+                  {item.internalApplications.map((application) => (
+                    <figure className="detail-panel application-screenshot-card" key={application.image}>
+                      <img src={application.image} alt={application.alt} />
+                      <figcaption>{application.caption}</figcaption>
+                    </figure>
+                  ))}
+                </div>
               </section>
             )}
 
